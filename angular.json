@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "angular-pd-app": "apps/angular-pd-app",
+    "angular-pd-app-e2e": "apps/angular-pd-app-e2e"
+  }
+}
