@@ -2,6 +2,8 @@
   "version": 2,
   "projects": {
     "angular-pd-app": "apps/angular-pd-app",
-    "angular-pd-app-e2e": "apps/angular-pd-app-e2e"
+    "angular-pd-app-e2e": "apps/angular-pd-app-e2e",
+    "ionic-pd-app": "apps/ionic-pd-app",
+    "ionic-pd-app-e2e": "apps/ionic-pd-app-e2e"
   }
 }
