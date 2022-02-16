@@ -21,7 +21,9 @@
     "@angular/router": "~13.2.0",
     "@capacitor/core": "^3.2.5",
     "@ionic/angular": "^5.8.3",
+    "@ngrx/store": "^13.0.2",
     "@nrwl/angular": "13.8.0",
+    "ngrx-store-localstorage": "^13.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
