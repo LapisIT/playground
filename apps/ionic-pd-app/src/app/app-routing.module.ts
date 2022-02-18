@@ -12,7 +12,11 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
-  { path: 'blogs', loadChildren: () => import('./blogs/blogs.module').then(m => m.BlogsModule) }
+  {
+    path: 'blog',
+    loadChildren: () =>
+      import('./blog-page/blog-page.module').then((m) => m.BlogPageModule),
+  },
 ];
 
 @NgModule({
@@ -28,5 +32,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

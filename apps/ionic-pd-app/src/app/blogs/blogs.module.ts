@@ -1,17 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { BlogsRoutingModule } from './blogs-routing.module';
-import { BlogsComponent } from './blogs.component';
-
+import { StoreModule } from '@ngrx/store';
+import { blogFeatureKey, blogReducer } from './blog.reducer';
 
 @NgModule({
-  declarations: [
-    BlogsComponent
-  ],
-  imports: [
-    CommonModule,
-    BlogsRoutingModule
-  ]
+  declarations: [],
+  imports: [CommonModule, StoreModule.forFeature(blogFeatureKey, blogReducer)],
 })
-export class BlogsModule { }
+export class BlogsModule {}

@@ -1,6 +1,4 @@
 {
   "name": "ionic-pd-app",
-  "devDependencies": {
-    "@capacitor/cli": "^3.2.5"
-  }
+  "devDependencies": {}
 }

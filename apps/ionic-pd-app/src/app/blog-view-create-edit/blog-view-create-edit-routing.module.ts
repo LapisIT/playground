@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BlogsComponent } from './blogs.component';
+import { ViewCreateEditBlogComponent } from './view-create-edit-blog.component';
 
-const routes: Routes = [{ path: '', component: BlogsComponent }];
+const routes: Routes = [{ path: '', component: ViewCreateEditBlogComponent }];
 
 @NgModule({
   /*
@@ -10,7 +10,6 @@ const routes: Routes = [{ path: '', component: BlogsComponent }];
   and is intended for feature modules.
   */
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class BlogsRoutingModule {
-}
+export class BlogViewCreateEditRoutingModule {}

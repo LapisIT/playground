@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        color="dark"
+        defaultHref="home"
+        text="Back"></ion-back-button>
+    </ion-buttons>
+    <ion-title> Blogs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-button [routerLink]="'create'">
+      New blog
+    </ion-button>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let blog of blogCollection" [routerLink]="['/view', blog.blogId]">
+      >
+      <ion-label>
+        <h2>{{blog.blogInfo.title}}</h2>
+        <p>{{blog.blogInfo.author}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
