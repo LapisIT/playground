@@ -1,0 +1,127 @@
+{
+  "projectType": "application",
+  "root": "apps/storybook-pd-app",
+  "sourceRoot": "apps/storybook-pd-app/src",
+  "prefix": "playground",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/storybook-pd-app",
+        "index": "apps/storybook-pd-app/src/index.html",
+        "main": "apps/storybook-pd-app/src/main.ts",
+        "polyfills": "apps/storybook-pd-app/src/polyfills.ts",
+        "tsConfig": "apps/storybook-pd-app/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/storybook-pd-app/src/favicon.ico",
+          "apps/storybook-pd-app/src/assets"
+        ],
+        "styles": ["apps/storybook-pd-app/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/storybook-pd-app/src/environments/environment.ts",
+              "with": "apps/storybook-pd-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "storybook-pd-app:build:production"
+        },
+        "development": {
+          "browserTarget": "storybook-pd-app:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "storybook-pd-app:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/storybook-pd-app/src/**/*.ts",
+          "apps/storybook-pd-app/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/storybook-pd-app"],
+      "options": {
+        "jestConfig": "apps/storybook-pd-app/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "port": 4400,
+        "config": {
+          "configFolder": "apps/storybook-pd-app/.storybook"
+        },
+        "projectBuildConfig": "storybook-pd-app"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "outputPath": "dist/storybook/storybook-pd-app",
+        "config": {
+          "configFolder": "apps/storybook-pd-app/.storybook"
+        },
+        "projectBuildConfig": "storybook-pd-app"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
