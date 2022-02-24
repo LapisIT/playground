@@ -1,4 +1,4 @@
-import { moduleMetadata, Story, Meta } from '@storybook/angular';
+import { moduleMetadata, Story, Meta, componentWrapperDecorator } from '@storybook/angular';
 import { action } from '@storybook/addon-actions';
 import { CardComponent } from './card.component';
 import { CardModule } from './card.module';
@@ -6,10 +6,20 @@ import { CardModule } from './card.module';
 export default {
   title: 'CardComponent',
   component: CardComponent,
+  parameters: {
+    backgrounds: {
+      values: [
+        { name: 'red', value: '#f00' },
+        { name: 'green', value: '#0f0' },
+        { name: 'blue', value: '#00f' },
+      ],
+    },
+  },
   decorators: [
     moduleMetadata({
       imports: [ CardModule ],
     }),
+    componentWrapperDecorator((story) => `<div style="margin: 1px">${story}</div>`),
   ],
 } as Meta<CardComponent>;
 
