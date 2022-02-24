@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        color="dark"
+        defaultHref="blog"
+        text="Back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Blog</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" [ngSwitch]="whichView">
+  <ion-content *ngSwitchCase="'create'">
+    <form [formGroup]="blogInfoForm" (ngSubmit)="createBlog()">
+      <ion-item>
+        <ion-input placeholder="Create a title" formControlName="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea placeholder="Start your writing..." formControlName="content"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-button type="submit">Save</ion-button>
+      </ion-item>
+    </form>
+
+  </ion-content>
+
+  <ion-content *ngSwitchCase="'edit'">
+    <ion-item>
+      <ion-input placeholder="Create a title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea placeholder="Start your writing..."></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-button>Save</ion-button>
+    </ion-item>
+  </ion-content>
+
+  <ion-content *ngSwitchDefault>
+    <ion-content *ngSwitchCase="'view'">
+      <ion-item>
+        <ion-input readonly="true" placeholder="Create a title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea readonly="true" placeholder="Start your writing..."></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-button>Save</ion-button>
+      </ion-item>
+    </ion-content>
+  </ion-content>
+
+</ion-content>
