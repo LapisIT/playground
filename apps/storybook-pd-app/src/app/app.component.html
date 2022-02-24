@@ -1,1 +1,9 @@
-<playground-nx-welcome></playground-nx-welcome> <router-outlet></router-outlet>
+
+<router-outlet>
+    <div class="main">
+        <label class="main__label">View only card</label>
+        <app-card class="main__item" [card]="testCard" [fromToCard]="true"></app-card>
+        <label class="main__label">Selectable card with action</label>
+        <app-card class="main__item" [card]="testCard" [fromToCard]="false"></app-card>
+    </div>
+</router-outlet>
