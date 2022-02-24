@@ -12,15 +12,18 @@
 
 <ion-content [fullscreen]="true" [ngSwitch]="whichView">
   <ion-content *ngSwitchCase="'create'">
-    <ion-item>
-      <ion-input placeholder="Create a title"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-textarea placeholder="Start your writing..."></ion-textarea>
-    </ion-item>
-    <ion-item>
-      <ion-button (click)="createBlog()">Save</ion-button>
-    </ion-item>
+    <form [formGroup]="blogInfoForm" (ngSubmit)="createBlog()">
+      <ion-item>
+        <ion-input placeholder="Create a title" formControlName="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea placeholder="Start your writing..." formControlName="content"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-button type="submit">Save</ion-button>
+      </ion-item>
+    </form>
+
   </ion-content>
 
   <ion-content *ngSwitchCase="'edit'">

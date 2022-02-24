@@ -15,9 +15,9 @@ export class BlogPageComponent implements OnInit {
   constructor(private router: Router, public blogStore: Store<IBlogState>) {}
 
   ngOnInit(): void {
-    this.blogStore
-      .select(selectAllBlogs)
-      .pipe(take(1))
-      .subscribe((blog) => (this.blogCollection = blog));
+    //   this.blogStore
+    //     .select(selectAllBlogs)
+    //     .pipe(take(1))
+    //     .subscribe((blog) => (this.blogCollection = blog));
   }
 }

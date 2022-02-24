@@ -18,11 +18,10 @@
   </ion-item>
 
   <ion-list>
-    <ion-item *ngFor="let blog of blogCollection" [routerLink]="['/view', blog.blogId]">
-      >
+    <ion-item *ngFor="let blog of blogCollection" [routerLink]="['view', blog.blogId]">
       <ion-label>
-        <h2>{{blog.blogInfo.title}}</h2>
-        <p>{{blog.blogInfo.author}}</p>
+        <h2>{{blog.title}}</h2>
+        <p>{{blog.date}}</p>
       </ion-label>
     </ion-item>
   </ion-list>

@@ -5,25 +5,11 @@ import { BlogPageComponent } from './blog-page.component';
 const routes: Routes = [
   { path: '', component: BlogPageComponent },
   {
-    path: 'view/:id',
+    path: ':blogMethod',
     loadChildren: () =>
-      import(
-        '../blog-view-create-edit/blog-view-create-edit-routing.module'
-      ).then((m) => m.BlogViewCreateEditRoutingModule),
-  },
-  {
-    path: 'create',
-    loadChildren: () =>
-      import(
-        '../blog-view-create-edit/blog-view-create-edit-routing.module'
-      ).then((m) => m.BlogViewCreateEditRoutingModule),
-  },
-  {
-    path: 'edit/:id',
-    loadChildren: () =>
-      import(
-        '../blog-view-create-edit/blog-view-create-edit-routing.module'
-      ).then((m) => m.BlogViewCreateEditRoutingModule),
+      import('../blog-view-create-edit/blog-view-create-edit.module').then(
+        (m) => m.BlogViewCreateEditModule
+      ),
   },
 ];
 

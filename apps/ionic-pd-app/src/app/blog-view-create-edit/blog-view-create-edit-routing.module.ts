@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ViewCreateEditBlogComponent } from './view-create-edit-blog.component';
 
-const routes: Routes = [{ path: '', component: ViewCreateEditBlogComponent }];
+const routes: Routes = [
+  { path: ':id', component: ViewCreateEditBlogComponent },
+  { path: '', component: ViewCreateEditBlogComponent },
+];
 
 @NgModule({
   /*
