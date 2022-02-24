@@ -1,0 +1,47 @@
+
+mat-card {
+  width: 300px;
+  padding-bottom: 0px;
+  border-top: solid 7px orange;
+  .mat-card-actions {
+    padding: 0;
+  }
+}
+
+mat-icon {
+  transform: scale(1.2);
+  margin-left: 10px;
+}
+
+.mat-card-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.card-content {
+  cursor: pointer;
+}
+
+.special {
+  position: fixed;
+  right: 10px;
+  font-weight: bold;
+  font-size: small;
+}
+
+button:focus{
+  outline: none;
+}
+
+.Modified-from-to {
+  color: orange;
+  font-size: larger;
+}
+.Deleted-from-to {
+  color:red;
+  font-size: larger;
+}
+.New-from-to {
+  color: green;
+  font-size: larger;
+}
