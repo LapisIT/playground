@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { IBlogState } from '../blogs/blog.reducer';
-import { createBlog } from '../blogs/blog.actions';
+import { createBlog, createBlogContent } from '../blogs/blog.actions';
 import { BlogMethod, IBlog } from '../models/blog';
 import { FormControl, FormGroup } from '@angular/forms';
+import { v4 } from 'uuid';
+import { BlogsService } from '../blogs/blogs.service';
 
 @Component({
   selector: 'playground-blog-view-create-edit',
@@ -25,7 +27,8 @@ export class ViewCreateEditBlogComponent implements OnInit {
 
   constructor(
     private router: ActivatedRoute,
-    public blogStore: Store<IBlogState>
+    public blogStore: Store<IBlogState>,
+    private blogsService: BlogsService
   ) {}
 
   ngOnInit(): void {
@@ -34,8 +37,13 @@ export class ViewCreateEditBlogComponent implements OnInit {
   }
 
   createBlog() {
-    // this.plotId = uuid();
-    this.blogStore.dispatch(createBlog({ blog: this.blogInfoForm.value }));
+    this.blogStore.dispatch(
+      createBlogContent({
+        blog: this.blogInfoForm.value,
+      })
+    );
     console.log(this.blogInfoForm);
   }
+
+  updateBlog() {}
 }

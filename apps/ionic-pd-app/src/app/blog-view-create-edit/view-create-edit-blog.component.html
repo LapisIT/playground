@@ -38,18 +38,18 @@
     </ion-item>
   </ion-content>
 
-  <ion-content *ngSwitchDefault>
-    <ion-content *ngSwitchCase="'view'">
+  <ion-content *ngSwitchCase="'view'">
+    <form [formGroup]="blogInfoForm" (ngSubmit)="updateBlog()">
       <ion-item>
-        <ion-input readonly="true" placeholder="Create a title"></ion-input>
+        <ion-input readonly="true" placeholder="Create a title" formControlName="title"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-textarea readonly="true" placeholder="Start your writing..."></ion-textarea>
+        <ion-textarea readonly="true" placeholder="Start your writing..." formControlName="content"></ion-textarea>
       </ion-item>
       <ion-item>
-        <ion-button>Save</ion-button>
+        <ion-button type="submit">Edit</ion-button>
       </ion-item>
-    </ion-content>
+    </form>
   </ion-content>
 
 </ion-content>

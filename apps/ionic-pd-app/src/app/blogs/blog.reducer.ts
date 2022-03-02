@@ -12,7 +12,9 @@ export const blogFeatureKey = 'blog';
 
 export type IBlogState = EntityState<IBlog>;
 
-export const adapter: EntityAdapter<IBlog> = createEntityAdapter<IBlog>();
+export const adapter: EntityAdapter<IBlog> = createEntityAdapter<IBlog>({
+  selectId: (blog) => blog.blogId,
+});
 
 export const initialIBlogState: IBlogState = adapter.getInitialState({});
 
