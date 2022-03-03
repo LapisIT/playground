@@ -30,6 +30,7 @@
     "ngrx-store-localstorage": "^13.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
+    "uuid": "^8.3.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -62,6 +63,7 @@
     "@storybook/manager-webpack5": "~6.4.12",
     "@types/jest": "27.0.2",
     "@types/node": "16.11.7",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "~5.10.0",
     "@typescript-eslint/parser": "~5.10.0",
     "cypress": "^9.1.0",

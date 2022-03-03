@@ -2,7 +2,7 @@ export interface IBlog {
   blogId: string;
   title: string;
   content: string;
-  date: string;
+  date: Date;
 }
 
 export enum BlogMethod {
